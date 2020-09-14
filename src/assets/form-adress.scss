@@ -1,0 +1,70 @@
+@keyframes shakeError {
+   0% {
+      transform: translateX(0);
+   }
+   15% {
+      transform: translateX(0.375rem);
+   }
+   35% {
+      transform: translateX(-0.375rem);
+   }
+   50% {
+      transform: translateX(0.375rem);
+   }
+   75% {
+      transform: translateX(-0.375rem);
+   }
+   90% {
+      transform: translateX(0.375rem);
+   }
+   100% {
+      transform: translateX(0);
+   }
+}
+.form-adress {
+   &__label {
+      display: block;
+      max-width: 400px;
+      margin: 0px auto 20px auto;
+      text-align: center;
+
+      .input {
+         border: 2px solid #bd8a88;
+         border-radius: 10px;
+         padding: 4px 20px;
+         &:focus {
+            border: 2px solid #84605f;
+         }
+         &.invalid {
+            border: 2px solid #e81919;
+            animation-name: shakeError;
+            animation-fill-mode: forwards;
+            animation-duration: 0.4s;
+            animation-timing-function: ease-in-out;
+            &:focus {
+               border: 2px solid #a21111;
+            }
+         }
+         &.valid {
+            border: 2px solid #2db82d;
+         }
+      }
+   }
+   &__next {
+      position: absolute;
+      bottom: 2%;
+      right: 2%;
+      z-index: 10;
+      .button {
+         font-size: 25px;
+         color: #32cd32;
+         transition: all 0.6s ease 0s;
+         @media (max-width: 769px) {
+            transition: all 0.2s ease 0s;
+         }
+         &:hover {
+            color: #238f23;
+         }
+      }
+   }
+}
